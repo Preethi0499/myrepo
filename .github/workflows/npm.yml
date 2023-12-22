@@ -13,7 +13,7 @@ jobs:
       - name: stop pm2
         run: |
           pm2 status
-          pm2 stop index
+          pm2 delete index
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
@@ -21,7 +21,7 @@ jobs:
       - run: |
           npm i
           pm2 status
-          pm2 start index.js
+          RUNNER_TRACKING_ID="" && pm2 start index.js
           pm2 status
 
   # publish-npm:
