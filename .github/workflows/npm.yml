@@ -12,16 +12,20 @@ jobs:
     steps:
       - name: stop pm2
         run: |
+          ps -ef 
           pm2 status
           pm2 delete index
+          ps -ef
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
           node-version: 16
       - run: |
           npm i
+          ps -ef
           pm2 status
           pm2 start index.js
+          ps -ef
           pm2 status
 
   # publish-npm:
