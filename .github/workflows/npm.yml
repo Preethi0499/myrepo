@@ -21,7 +21,7 @@ jobs:
       - run: |
           npm i
           pm2 status
-          RUNNER_TRACKING_ID="" && pm2 start index.js
+          pm2 start index.js
           pm2 status
 
   # publish-npm:
