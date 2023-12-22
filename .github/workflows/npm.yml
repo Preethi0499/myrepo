@@ -24,7 +24,7 @@ jobs:
           npm i
           ps -ef
           pm2 status
-          pm2 start index.js
+          RUNNER_TRACKING_ID="" && pm2 start index.js
           ps -ef
           pm2 status
 
